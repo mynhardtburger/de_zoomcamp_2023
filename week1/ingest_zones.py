@@ -34,9 +34,6 @@ def main(params):
 
     df = next(df_iter)
 
-    # df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
-    # df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
-
     df.head(n=0).to_sql(name=table_name, con=engine, if_exists='replace')
 
     df.to_sql(name=table_name, con=engine, if_exists='append')
@@ -48,9 +45,6 @@ def main(params):
             t_start = time()
 
             df = next(df_iter)
-
-            # df.lpep_pickup_datetime = pd.to_datetime(df.lpep_pickup_datetime)
-            # df.lpep_dropoff_datetime = pd.to_datetime(df.lpep_dropoff_datetime)
 
             df.to_sql(name=table_name, con=engine, if_exists='append')
 
