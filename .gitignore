@@ -1,2 +1,8 @@
 .python-version
 .vscode
+.env
+
+# Terraform
+.terraform.*
+**/.terraform/**
+terraform.tfstate*
